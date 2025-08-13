@@ -12,7 +12,7 @@ def run_gitleaks():
     """Run gitleaks and return its exit code."""
     try:
         result = subprocess.run(
-            ['gitleaks', 'protect', '-v', '--staged'],
+            ['gitleaks', 'git', '-v', '--pre-commit', '--staged'],
             check=False
         )
         return result.returncode
